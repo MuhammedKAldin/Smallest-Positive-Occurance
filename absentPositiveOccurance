@@ -1,0 +1,24 @@
+// returns smallest positive number that is not in the array 
+function solution(A) {
+    let x = Math.min(...A);
+    let y = Math.max(...A);
+    let z = -1;
+    for(let i = x; i <= y; i++)
+    {
+        if(i > 0)
+        {
+            if (!A.includes(i))
+            {
+                z = i;
+                return z; 
+            }
+            if(i==y && z == -1) {
+                if(!A.includes(y+1)) {
+                    return y+1;                
+                } 
+            }
+        } else {
+            return 1;
+        }
+    }
+}
